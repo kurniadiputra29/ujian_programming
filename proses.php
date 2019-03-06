@@ -1,10 +1,10 @@
 <?php 
-include 'database.php';
+include 'koneksi.php';
 $db = new database();
 
 $aksi = $_GET['aksi'];
  if($aksi == "tambah"){
-     $db->input($_POST['nama'],$_POST['alamat'],$_POST['usia'],$_POST['email']);
+     $db->input($_POST['nama'],$_POST['email'],$_POST['password']);
      header("location:index.php");
  }elseif($aksi == "hapus"){     
      $db->hapus($_GET['id']);

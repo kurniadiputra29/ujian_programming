@@ -7,12 +7,12 @@ class database{
 	var $pass = "123";
 	var $db = "ujian";
 
-	 function __construct(){
+	public function __construct(){
 		$this->konek = mysqli_connect($this->host, $this->uname, $this->pass, $this->db);
 		return $this->konek;
 	}
  
-	 function tampil_data(){
+	public function tampil_data(){
 		$sql			= "SELECT * FROM user";
 		$data 			= mysqli_query($this->konek, $sql);
 		while($row 		= mysqli_fetch_assoc($data)){
@@ -20,8 +20,9 @@ class database{
 		}
 		return $result;
 	}
-	function input($nama,$alamat,$usia,$email){
-        mysql_query("insert into user values('','$nama','$alamat','$usia','$email')");
+	public function input($nama,$email,$password){
+        $sql			= "INSERT INTO user (nama, email, password) VALUES ('$nama', '$email', '$password')";
+		$data 			= mysqli_query($this->konek, $sql);
     }
 }
 ?>

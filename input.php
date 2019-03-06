@@ -2,45 +2,33 @@
 <html>
 <head>
 	<title>Index</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+		}
+		input{
+			margin-top: 10px;
+		}
+	</style>
 </head>
 <body>
-
-	<?php 
-		include 'koneksi.php';
-		$db = new database();
-	?>
-
-	<a href="input.php">Input Data</a>
-
-	<table border="1">
-		<thead>
-			<tr>
-				<th>No</th>
-				<th>Nama</th>
-				<th>Email</th>
-				<th>Password</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php
-			$no = 1;
-			foreach($db->tampil_data() as $row){
-			?>
-			<tr>
-				<td><?= $no++; ?></td>
-				<td><?= $row['nama']; ?></td>
-				<td><?= $row['email']; ?></td>
-				<td><?= $row['password']; ?></td>
-				<td>
-				<a href="edit.php?id=<?= $row['id']; ?>&aksi=edit">Edit</a>
-				<a href="proses.php?id=<?= $row['id']; ?>&aksi=hapus">Hapus</a>			
-				</td>
-			</tr>
-			<?php 
-			}
-			?>
-		</tbody>
-</table>
+<form action="proses.php?aksi=tambah" method="post">
+        <div>
+          <label for="nama">Nama</label>
+          <input type="text" name="nama" id="nama">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" >
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="text" name="password" id="password" >
+        </div>
+        <div>
+          <input type="submit" value="Submit">
+        </div>
+      
+</form>
 </body>
 </html>
