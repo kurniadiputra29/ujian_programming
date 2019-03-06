@@ -24,6 +24,10 @@ class database{
         $sql			= "INSERT INTO user (nama, email, password) VALUES ('$nama', '$email', '$password')";
 		$data 			= mysqli_query($this->konek, $sql);
     }
+    public function hapus($id){
+    	$sql			= "DELETE FROM user WHERE id='$id'";
+		$data 			= mysqli_query($this->konek, $sql);
+    }
 }
 ?>
 <?php 
