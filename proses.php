@@ -10,7 +10,7 @@ $aksi = $_GET['aksi'];
      $db->hapus($_GET['id']);
     header("location:index.php");
  }elseif($aksi == "update"){
-     $db->update($_POST['id'],$_POST['nama'],$_POST['alamat'],$_POST['usia'],$_POST['email']);
+     $db->update($_POST['id'],$_POST['nama'],$_POST['email'],$_POST['password']);
      header("location:index.php");
  }
 ?>

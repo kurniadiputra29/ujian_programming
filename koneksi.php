@@ -28,6 +28,18 @@ class database{
     	$sql			= "DELETE FROM user WHERE id='$id'";
 		$data 			= mysqli_query($this->konek, $sql);
     }
+    public function edit($id){
+    	$sql			= "SELECT * FROM user WHERE id='$id'";
+		$data 			= mysqli_query($this->konek, $sql);
+		while($row 		= mysqli_fetch_assoc($data)){
+			$result[] 	= $row;
+		}
+		return $result;
+	}
+	public function update($id,$nama,$email,$password){
+		$sql			= "UPDATE user SET nama='$nama', email='$email', password='$password' WHERE id='$id'";
+		$data 			= mysqli_query($this->konek, $sql);
+    }
 }
 ?>
 <?php 

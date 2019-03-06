@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Index</title>
+	<title>Input</title>
 	<style type="text/css">
 		div{
 			width: 100px;
